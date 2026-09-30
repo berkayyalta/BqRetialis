@@ -1,0 +1,25 @@
+// Made by Berkay
+
+#ifndef MM_VIRTUAL_MEMORY_H
+#define MM_VIRTUAL_MEMORY_H
+
+#include "../bk/bk_types.h"
+
+#define MM_VIRTUAL_MEMORY_PAGE_SIZE 4096ULL
+
+enum MmVirtualMemoryFlags : UInt64
+{
+    MM_VIRTUAL_MEMORY_FLAG_NONE          = 0ULL,
+    MM_VIRTUAL_MEMORY_FLAG_PRESENT       = (1ULL << 0),
+    MM_VIRTUAL_MEMORY_FLAG_WRITABLE      = (1ULL << 1),
+    MM_VIRTUAL_MEMORY_FLAG_USER          = (1ULL << 2),
+    MM_VIRTUAL_MEMORY_FLAG_WRITE_THROUGH = (1ULL << 3),
+    MM_VIRTUAL_MEMORY_FLAG_CACHE_DISABLE = (1ULL << 4),
+    MM_VIRTUAL_MEMORY_FLAG_ACCESSED      = (1ULL << 5),
+    MM_VIRTUAL_MEMORY_FLAG_DIRTY         = (1ULL << 6),
+    MM_VIRTUAL_MEMORY_FLAG_HUGE_PAGE     = (1ULL << 7),
+    MM_VIRTUAL_MEMORY_FLAG_GLOBAL        = (1ULL << 8),
+    MM_VIRTUAL_MEMORY_FLAG_NO_EXECUTE    = (1ULL << 63)
+};
+
+#endif
